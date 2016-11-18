@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface LLWine : NSObject
-
+/** 价格 */
+@property (copy,nonatomic) NSString *money;
+/** 名称 */
+@property (copy,nonatomic) NSString *name;
+/** 图片 */
+@property (copy,nonatomic) NSString *image;
+/** 图片 */
+@property (assign,nonatomic) NSUInteger count;
 @end

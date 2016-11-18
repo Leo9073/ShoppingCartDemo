@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLWine.h"
+@class LLWineCell;
+
+@protocol LLWineCellDelegate <NSObject>
+@optional
+- (void)wineCellDidClickedPlusButton:(LLWineCell *)cell;
+- (void)wineCellDidClickedMinusButton:(LLWineCell *)cell;
+@end
 
 @interface LLWineCell : UITableViewCell
-
+@property (strong,nonatomic) LLWine *wine;
+@property (weak,nonatomic) id<LLWineCellDelegate> delegate;
 @end

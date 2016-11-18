@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LLShoppingCartView : UIView
+@protocol LLShoppingCartViewDelegate <NSObject>
+@optional
+- (void)buyButtonDidClicked;
+- (void)clearButtonDidClicked;
+@end
 
+@interface LLShoppingCartView : UIView
+/** 物品总价 */
+@property (weak,nonatomic) UILabel *totalPriceLabel;
+/** 购买按钮 */
+@property (weak,nonatomic) UIButton *buyButton;
+/** 清空按钮 */
+@property (weak,nonatomic) UIButton *clearButton;
+
+@property (weak,nonatomic) id<LLShoppingCartViewDelegate> delegate;
 @end
